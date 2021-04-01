@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Roboto&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles/style.css">
+	<title>Deposit calculator</title>
+</head>
+
+<body>
+	<section class="main">
+		<div class="container">
+			<h1 class="title">Deposite calculator</h1>
+			<h2 class="sub-title mt-4">Dane podstawowe</h2>
+			<div class="basic-data">
+				<div class="option-container">
+					<h3 class="text">Waluta</h3>
+					<select id="currency">
+						<option value="zł">Złoty</option>
+						<option value="$">Dolar</option>
+						<option value="€">Euro</option>
+					</select>
+				</div>
+				<div class="option-container">
+					<h3 class="text">Kapitał</h3>
+					<div>
+						<input type="number" name="deposit-amount" id="deposit-amount">
+						<span class="deposit-error">Wpisz sume wieksza od 0</span>
+					</div>
+				</div>
+				<div class="option-container">
+					<h3 class="text">Stawka roczna (%)</h3>
+					<div>
+						<input type="number" name="annual-rate" id="annual-rate" min="0" max="100">
+						<span class="deposit-error">Wpisz procent wiekszy od 0</span>
+					</div>
+				</div>
+				<div class="option-container">
+					<h3 class="text">Data wpłaty</h3>
+					<div>
+						<input type="date" name="deposit-date" id="deposit-date">
+						<span class="deposit-error">Wpisz date</span>
+					</div>
+				</div>
+				<div class="option-container">
+					<h3 class="text">Termin</h3>
+					<div>
+						<input type="date" name="deposit-term" id="deposit-term">
+						<span class="deposit-error">Wpisz date</span>
+					</div>
+				</div>
+			</div>
+			<div class="regular-contribution">
+				<h2 class="sub-title">Regularne doładowanie wkładu</h2>
+				<div class="option-container">
+					<h3 class="text">Doładowanie wkładu</h3>
+					<select name="regular-replenishment" id="regular-replenishment">
+						<option value="1">Niema</option>
+						<option value="2">Każdego misąca</option>
+						<option value="3">Każdego roku</option>
+					</select>
+				</div>
+				<div class="option-container">
+					<h3 class="text">Kwota</h3>
+					<input type="number" name="regular-amount" id="regular-amount">
+				</div>
+			</div>
+			<div class="capitalization">
+				<h2 class="sub-title">Kpitulacja</h2>
+				<div class="option-container">
+					<h3 class="text">Kpitulacja</h3>
+					<select name="capitalization-time" id="capitalization-time">
+						<option value="1">Niema</option>
+						<option value="2">Każdego misąca</option>
+						<option value="3">Każdego roku</option>
+					</select>
+				</div>
+			</div>
+			<button id="count-deposite">obliczyć</button>
+		</div>
+	</section>
+	<!--Main ends-->
+	<section class="global-table">
+		<div class="container">
+			<div class="table-wrapper">
+				<table id="global-tabel">
+					<tbody class="first-column">
+						<tr>
+							<td>№</td>
+							<td>Data</td>
+							<td>Dzień</td>
+							<td>Suma</td>
+							<td>Doładowania</td>
+							<td>%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+	<!--Global table ends-->
+	<section class="finally-result">
+		<div class="container">
+			<div class="finally-results-container">
+				<h3 class="text">Obliczone znaczenia</h3>
+				<div class="finally-results">
+					<ul>
+						<li>Znaczenia</li>
+						<li>Do powrotu</li>
+						<li>% po wkładzie</li>
+						<li>Razem</li>
+					</ul>
+					<ul>
+						<li id="finally-currency"></li>
+						<li id="finally-sum"></li>
+						<li id="finnaly-procent"></li>
+						<li id="finally-result"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--Finally result ends-->
+	<script src="js/class.js"></script>
+	<script src="js/date.format.js"></script>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
