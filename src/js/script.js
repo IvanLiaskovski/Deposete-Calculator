@@ -188,7 +188,7 @@ function finallyTable(countArr, currency, amount, endResult) {
     column.toTable();
 
     let finallyCurContent = (currency == "zł") ? "Złotych" : (currency == "$") ? "Dolarów" :
-        (currency == "€") ? "Euro" : (currency == "₴") ? "Gryweń" : (currency == "₽") ? "Rubli" : "Waluta";
+        (currency == "€") ? "Euro" : "Waluta";
 
     finallySum.textContent = (amount + allExtraMoney).toDivide();
     finallyProcent.textContent = allProcent.toDivide();
